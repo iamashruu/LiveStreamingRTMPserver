@@ -8,6 +8,10 @@
     {
       "src": "server.js",
       "use": "@now/node"
+    },
+    {
+      "src": "/camStat",
+      "use": "@now/node"
     }
   ],
   "routes": [

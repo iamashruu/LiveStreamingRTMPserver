@@ -1,23 +1,15 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "public/**",
-      "use": "@now/static"
-    },
-    {
-      "src": "server.js",
-      "use": "@now/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/camStat",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/server.js"
-    }
-  ]
+    "version": 2,
+    "builds": [
+        {
+            "src": "index.js",
+            "use": "@now/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "server.js"
+        }
+    ]
 }

@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const NodeMediaServer = require("node-media-server");
 
+const port = process.env.PORT || 3000; // Use process.env.PORT or 3000 as the default port
+
 // Serve static files from the "public" directory
 app.use(express.static("public"));
 
@@ -35,6 +37,6 @@ app.get("/camStat", (req, res) => {
   res.json(cameraMode);
 });
 
-const server = app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+const server = app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });

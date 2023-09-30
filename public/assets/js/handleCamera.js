@@ -1,3 +1,7 @@
+let PORT = 8000;
+let RTMP_URL = window.location.origin;
+// let RTMP_URL = "https://live-streaming-rtmp-server.vercel.app";
+
 async function getData() {
   const response = await fetch(`/camStat`);
   const data = await response.json();
@@ -12,10 +16,10 @@ async function setUp() {
   // let newSecondaryCam = secondaryCam.filter((cam) => cam !== data.primary); //rtmp need
   console.log(newSecondaryCam);
   let camera = {
-    primary: `http://localhost:8000/livecamera/${data.primary}.flv`,
+    primary: `${RTMP_URL}:${PORT}/livecamera/${data.primary}.flv`,
     secondary: [
-      `http://localhost:8000/livecamera/${newSecondaryCam[0]}.flv`,
-      `http://localhost:8000/livecamera/${newSecondaryCam[1]}.flv`,
+      `${RTMP_URL}:${PORT}/livecamera/${newSecondaryCam[0]}.flv`,
+      `${RTMP_URL}:${PORT}/livecamera/${newSecondaryCam[1]}.flv`,
     ],
   };
 

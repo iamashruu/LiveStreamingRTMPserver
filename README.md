@@ -8,6 +8,8 @@ ffmpeg -f dshow -i video="Integrated Webcam" -vf "format=yuv420p" -c:v libx264 -
 
 ffmpeg -f dshow -i video="Integrated Webcam" -vf "format=yuv420p" -c:v libx264 -tune zerolatency -preset veryfast -an -f flv rtmp://localhost:1935/live/camera/0
 
+ffmpeg -f dshow -i video="Integrated Webcam" -vf "format=yuv420p" -c:v libx264 -tune zerolatency -preset veryfast -an -f flv rtmp://live-streaming-rtmp-server.vercel.app/live/camera/0
+
 In this command:
 
 -f dshow: Specifies the input format as DirectShow, which is suitable for Windows.

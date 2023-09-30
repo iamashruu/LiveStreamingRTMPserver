@@ -1,3 +1,8 @@
 {
-  "functions": "api" // Replace with your functions directory path
+  "functions": {
+    "api/server.js": {
+      "runtime": "nodejs16.x",
+      "memory": 1024
+    }
+  }
 }

@@ -3,7 +3,7 @@ let RTMP_URL = window.location.origin;
 // let RTMP_URL = "https://live-streaming-rtmp-server.vercel.app";
 
 async function getData() {
-  const response = await fetch(`/api/camStat`);
+  const response = await fetch(`/camStat`);
   const data = await response.json();
   console.log(data);
   return data;

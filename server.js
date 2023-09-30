@@ -31,7 +31,7 @@ let cameraMode = {
   primary: primaryCameraNo,
 };
 
-app.get("api/camStat", (req, res) => {
+app.get("/camStat", (req, res) => {
   res.json(cameraMode);
 });
 

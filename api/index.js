@@ -2,9 +2,6 @@ const express = require("express");
 const app = express();
 const NodeMediaServer = require("node-media-server");
 
-// Serve static files from the "public" directory
-app.use(express.static("public"));
-
 // RTMP Streaming Configuration
 const config = {
   rtmp: {

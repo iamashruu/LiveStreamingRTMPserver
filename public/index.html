@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Live Video Stream</title>
+    <link rel="stylesheet" href="./assets/css/camera_v2.css">
+</head>
+
+<body>
+    <header>
+        <img src="./assets/img/logo.png" alt="Logo">
+    </header>
+    <main>
+        <div class="camera-interface">
+            <div class="camera-primary">
+    
+                <img class="primaryImage" src="./assets/img/loading2.gif" alt="Camera 1">
+            </div>
+            <div class="camera-small-container">
+                <div class="camera-small camera2">
+                    <img src="./assets/img/loading.gif" alt="Camera 2">
+                </div>
+                <div class="camera-small camera3">
+                    <img src="./assets/img/loading3.gif" alt="Camera 3">
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <aside class="progressbar">
+        <div class="progressText">Peak</div>
+    
+        <div class="progress">
+            <small></small>
+            <div class="progress-done"></div>
+        </div>
+        <div class="progressText">Lift Off</div>
+    </aside>
+    
+    <footer>
+        <div class="velocity">
+            Velocity<span class="circle">35</span>kmh<sup><small>-1</small>
+        </div>
+        <div class="altitude">
+            <div class="curve">
+                <span>Altitude 9092 ft</span>
+            </div>
+        </div>
+    
+        <div class="acceleration">
+            <div class="accText">
+                Acceleration<span class="circle">9.8</span> ms<sup><small>-2</small></sup>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.bootcss.com/flv.js/1.5.0/flv.min.js"></script>
+
+    <!-- <h1>Live Video Stream</h1> -->
+    <!-- <video id="video" width="640" height="480" controls autoplay></video> -->
+
+    <!-- <script src="https://cdn.bootcss.com/flv.js/1.5.0/flv.min.js"></script>
+    <script>
+        if (flvjs.isSupported()) {
+            const videoElement = document.getElementById('video');
+            const flvPlayer = flvjs.createPlayer({
+                type: 'flv',
+                url: 'http://localhost:8000/live/ash.flv'
+            });
+            flvPlayer.attachMediaElement(videoElement);
+            flvPlayer.load();
+            flvPlayer.play();
+        }
+    </script> -->
+    <!-- <script src="./stream.js"></script> -->
+    <script src="./assets/js/handleCamera.js"></script>
+</body>
+
+</html>

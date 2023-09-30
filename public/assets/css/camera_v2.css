@@ -1,0 +1,441 @@
+/* Reset default margin and padding */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #1d292b;
+}
+
+/* Header Style */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 8vh;
+    background-color: #141b1b;
+    color: white;
+    padding: 0 20px;
+}
+
+/* Logo Style */
+header img {
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+}
+
+main {
+    background: #46afaf;
+    /* height: calc(92vh - 8vh); */
+    height: calc(92vh);
+    /* Adjust for header height */
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+}
+
+/* Center the camera interface */
+.camera-interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    /* gap: 10px; */
+}
+
+/* Primary Camera Style */
+.camera-primary {
+    flex: 5;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    align-items: flex-start;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Video Style */
+.video {
+    width: 100%;
+    /* Make the video element fill the container */
+    height: 100%;
+    /* Make the video element fill the container */
+    object-fit: fill;
+    
+    /* Preserve aspect ratio and cover the container */
+}
+.primaryVideo {
+    width: 100%;
+    /* Make the video element fill the container */
+    height: 100%;
+    /* Make the video element fill the container */
+    object-fit: fill;
+
+    /* Preserve aspect ratio and cover the container */
+}
+.secondaryVideo {
+    width: 100%;
+    /* Make the video element fill the container */
+    height: 100%;
+    /* Make the video element fill the container */
+    object-fit: fill;
+
+    /* Preserve aspect ratio and cover the container */
+}
+.secondaryVideo2 {
+    width: 100%;
+    /* Make the video element fill the container */
+    height: 100%;
+    /* Make the video element fill the container */
+    object-fit: fill;
+
+    /* Preserve aspect ratio and cover the container */
+}
+
+.camera-primary img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    object-fit: fill;
+}
+/* progress bar on primary camera */
+
+.progressbar{
+    position: relative;
+    bottom: 80vh;
+    left: 1vw;
+}
+
+.progress {
+    background: #f8f7f7f6;
+    border-radius: 20px;
+    /* height: 300px; */
+    height: 40vh;
+    width: 1vw;
+    overflow: hidden;
+    font-size: 10px;
+    transform: rotate(180deg);
+    z-index: 20;
+}
+
+.progress small {
+    position: absolute;
+    padding: 2px;
+    font: 0.3rem;
+    font-weight: bold;
+    margin: 0.4rem auto;
+    color: rgb(0, 0, 0);
+    transform: rotate(-180deg);
+}
+
+.progressText {
+    font-size: 1.8vw;
+    color: #f8f7f7;
+    font-weight: 400;
+    padding-top: 0.3rem;
+}
+
+.progress-done {
+    background: linear-gradient(to top, #f82b70, #f82b70);
+    border-radius: 20px;
+    box-shadow: 0px 3px 3px -5px #f82b70, 0 2px 5px #f82b70;
+    width: 20px;
+    height: 0;
+    transition: height 1s ease;
+}
+/* Small Cameras Container */
+.camera-small-container {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    /* gap: 10px; */
+    overflow: hidden;
+}
+
+/* Small Camera Style */
+.camera-small {
+    display: flex;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    /* height: 100%; */
+    /* height: calc(46vh - 4vh); */
+    height: calc(46vh);
+}
+
+.camera-small img {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Footer Style */
+footer {
+    /* background-color: #141b1b; */
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    /* padding: 1rem; */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Velocity Style */
+
+.velocity {
+    background: #4249531f;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.1rem;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+}
+
+/* Altitude Style */
+
+
+/* Curve Styles */
+.curve {
+    width: 20vw;
+    height: 10vh;
+    margin-top: 1.8vh;
+    border: solid 3px;
+    border-color: rgb(255, 255, 255) rgb(255, 255, 255) transparent rgb(255, 255, 255);
+    border-radius: 50%/100px 100px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #13151898; */
+    background:#4249531f;
+}
+
+.curve span {
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 0.2rem;
+}
+
+/* Acceleration Style */
+
+.acceleration{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: flex-start;
+    width: auto;
+    /* background: #13151898; */
+    background: #4249531f;
+    padding: 1rem;
+    border-radius: 0.7rem;
+}
+
+.axis {
+    display: flex;
+    justify-content: space-between;
+    /* width: auto;
+    margin: 0 2rem; */
+}
+.num-axis {
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0.6rem; */
+}
+
+.circle {
+    padding: 0.2rem;
+    margin: 0 0.1rem;
+    border: 2px solid #f9fafd;
+    border-radius: 50%;
+    /* background: #13151898; */
+    background:#4249531f;
+}
+
+/* Responsiveness*/
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header img {
+        width: 80px;
+        height: 80px;
+    }
+    .progressbar {
+        bottom: 60vh;
+    }
+    .progress {
+        width: 10px;
+        height: 150px;
+    }
+
+    .progress small {
+        font: 0.2rem;
+    }
+
+    .progressText {
+        font-size: 1rem;
+    }
+    /* Curve Styles */
+    .curve {
+        width: 26vw;
+        /* height: 10vh; */
+        height: auto;
+        margin-top: 1.8vh;
+        /* display: none; */
+        
+    }
+
+    .curve span {
+        color: white;
+        font-size: 0.8rem;
+        margin-top: 0vh;
+            padding: 0.5rem;
+    }
+
+   
+    footer {
+            font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        width: 60px;
+        height: 60px;
+    }
+    .progressbar {
+        bottom: 60vh;
+        left: 1vw;
+    }
+    .progress {
+        width: 10px;
+        height: 30vh;
+    }
+
+    .progress small {
+        font: 0.1rem;
+    }
+
+    .progressText {
+        font-size: 0.8rem;
+    }
+
+    /* Curve Styles */
+    .curve {
+        width: 26vw;
+        /* height: 10vh; */
+        height: auto;
+        /* margin-top: 1vh; */
+        /* display: none; */
+
+    }
+
+    .curve span {
+        color: white;
+        font-size: 0.8rem;
+        margin-top: 0vh;
+        padding: 0.5rem;
+    }
+
+    /* Center the camera interface */
+    .camera-interface {
+        /* display: flex; */
+        flex-direction: column;
+
+        align-items: stretch;
+        justify-content: space-around;
+        width: 100%;
+        /* gap: 10px; */
+    }
+
+    .camera-primary {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        background-color: #fff;
+        align-items: flex-start;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .camera-primary img {
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+        object-fit: fill;
+    }
+    .camera-primary video {
+        width: 100%;
+        height: 100%;
+        /* object-fit: cover; */
+        object-fit: fill;
+    }
+
+    /* Small Cameras Container */
+    .camera-small-container {
+        display: flex;
+        flex-direction: column;
+        /* flex: 1; */
+        /* gap: 10px; */
+        overflow: hidden;
+    }
+
+    /* Small Camera Style */
+    .camera-small {
+        display: flex;
+        width: 100%;
+        /* height: 100%; */
+        /* height: calc(46vh - 4vh); */
+        /* height: calc(56vh); */
+    }
+
+    .camera-small img {
+        /* flex: 1; */
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    .camera-small video {
+        /* flex: 1; */
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+
+    footer {
+            font-size: 0.8rem;
+    }
+}
+@media (max-height: 480px) {
+    
+    .progressbar {
+        bottom: 70vh;
+        left: 1vw;
+    }
+    .progress {
+        width: 10px;
+        height: 30vh;
+    }
+
+    .progress small {
+        font: 0.1rem;
+    }
+
+    .progressText {
+        font-size: 0.8rem;
+    }
+
+   
+}

@@ -2,8 +2,6 @@ const express = require("express");
 const app = express();
 const NodeMediaServer = require("node-media-server");
 
-const port = process.env.PORT || 3000; // Use process.env.PORT or 3000 as the default port
-
 // Serve static files from the "public" directory
 app.use(express.static("public"));
 
@@ -33,10 +31,18 @@ let cameraMode = {
   primary: primaryCameraNo,
 };
 
+// Handle the /camStat route
 app.get("/camStat", (req, res) => {
   res.json(cameraMode);
 });
 
-const server = app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+// Handle other routes, or use a catch-all route
+app.get("*", (req, res) => {
+  // Handle other routes or return an appropriate response
+  res.send("Hello, this is your Express app!");
+});
+
+// Use process.env.PORT for port to work on Vercel
+const server = app.listen(process.env.PORT || 3000, () => {
+  console.log(`Server is running on port ${process.env.PORT || 3000}`);
 });

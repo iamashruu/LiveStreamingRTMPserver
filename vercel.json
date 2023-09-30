@@ -2,6 +2,10 @@
   "version": 2,
   "builds": [
     {
+      "src": "public/*",
+      "use": "@now/static"
+    },
+    {
       "src": "server.js",
       "use": "@now/node"
     }
@@ -9,7 +13,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "server.js"
+      "dest": "/public/$1" 
     }
   ]
 }

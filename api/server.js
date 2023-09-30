@@ -24,14 +24,14 @@ const nms = new NodeMediaServer(config);
 nms.run();
 
 // Send Camera Mode with Selected Primary Camera
-let mode = "single";
+let mode = "multi";
 let primaryCameraNo = 0;
 let cameraMode = {
   mode,
   primary: primaryCameraNo,
 };
 
-app.get("/camStat", (req, res) => {
+app.get("api/camStat", (req, res) => {
   res.json(cameraMode);
 });
 

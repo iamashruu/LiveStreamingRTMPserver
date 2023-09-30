@@ -1,8 +1,18 @@
 {
   "functions": {
     "api/server.js": {
-      "runtime": "nodejs16.x",
-      "memory": 1024
+      "runtime": "nodejs16.x"
     }
-  }
+  },
+  "builds": [
+    {
+      "src": "public/*",
+      "use": "@now/static"
+    }
+  ],
+  "routes": [
+    { "src": "/api/camStat", "dest": "/api/server.js" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/public/$1" }
+  ]
 }

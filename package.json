@@ -1,14 +1,22 @@
 {
-  "name": "LiveStreamingRTMPserving",
+  "name": "livestreamingrtmpserver",
   "version": "1.0.0",
-  "description": "",
+  "description": "ffmpeg -f dshow -i video=\"Integrated Webcam\" -vf \"format=yuv420p\" -c:v libx264 -tune zerolatency -preset ultrafast -f flv rtmp://localhost:1935/live/camera/0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamashruu/LiveStreamingRTMPserver.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamashruu/LiveStreamingRTMPserver/issues"
+  },
+  "homepage": "https://github.com/iamashruu/LiveStreamingRTMPserver#readme",
   "dependencies": {
     "express": "^4.18.2",
     "node-media-server": "^2.6.2"

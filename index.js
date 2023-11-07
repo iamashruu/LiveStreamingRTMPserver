@@ -2,6 +2,11 @@ const express = require("express");
 const app = express();
 const NodeMediaServer = require("node-media-server");
 
+const cors = require("cors");
+app.use(express.json());
+// Enable CORS for all routes
+app.use(cors());
+
 // RTMP Streaming Configuration
 const config = {
   rtmp: {
@@ -22,15 +27,51 @@ nms.run();
 
 // Send Camera Mode with Selected Primary Camera
 let mode = "multi";
-let primaryCameraNo = 0;
-let cameraMode = {
+let primaryCameraNo = "0";
+let cameraSetting = {
   mode,
   primary: primaryCameraNo,
 };
 
+app.post("/startStream", (req, res) => {
+  const { cameraMode, primaryCamera } = req.body;
+  console.log(cameraMode, primaryCamera);
+
+  cameraSetting = {
+    mode: cameraMode,
+    primary: primaryCamera,
+  };
+  res.json(cameraSetting);
+});
+
 // Handle the /camStat route
 app.get("/camStat", (req, res) => {
-  res.json(cameraMode);
+  res.json(cameraSetting);
+});
+
+let sensorData = {
+  message: "Rocket data received",
+  isSuccess: true,
+  data: {
+    acceleration: 10,
+    velocity: 20,
+    altitude: 30,
+    setRange: 100,
+    currentRange: 70,
+  },
+};
+
+setInterval(() => {
+  // Randomize sensor data values
+  sensorData.data.acceleration = Math.floor(Math.random() * 100);
+  sensorData.data.velocity = Math.floor(Math.random() * 100);
+  sensorData.data.altitude = Math.floor(Math.random() * 100);
+  // sensorData.data.setRange = Math.floor(Math.random() * 100);
+  sensorData.data.currentRange = Math.floor(Math.random() * 100);
+}, 200);
+
+app.get("/api/sensor/data", (req, res) => {
+  res.json(sensorData);
 });
 
 // Handle other routes, or use a catch-all route
